@@ -1,0 +1,11 @@
+.cards{
+display: inline-block;
+}
+  .example-card{
+    width:45%;
+    margin: 20px;
+    display:inline-block;
+  }
+.quantity{
+  margin-left: 100px;
+}
