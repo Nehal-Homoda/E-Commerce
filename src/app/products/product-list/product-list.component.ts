@@ -22,11 +22,14 @@ export class ProductListComponent implements OnInit {
       this.isLoad = false;
     });
   }
-  showDetails(proId: string) {
+  toDetailsPage(proId: string) {
     // this.productService.getProductById(proId).subscribe(prodId=>{
     //   this.productId=prodId.id;
     // })
     this.router.navigateByUrl(`/product/details/${proId}`)
+  }
+  toEditPage(proId:string){
+    
   }
 
 }

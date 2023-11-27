@@ -2,12 +2,21 @@ import { Injectable } from '@angular/core';
 import { IProduct } from '../models/iproduct';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductServiceService {
-  //private products: IProduct[];
+  bodyParam:IProduct={
+    id:"",
+    name:"",
+    photo:"", 
+    category:"",
+    price:0,
+    quantityInStock:0
+  }
+  body:string=""
   constructor(private httpClient:HttpClient) {
   }
   getAllProducts():Observable<IProduct[]> {
@@ -28,15 +37,23 @@ export class ProductServiceService {
   //   this.products.push(prod);
 
   // }
-  // editProduct(product: IProduct) {
-  //   let productIndex = this.products.findIndex(prod => prod.id == product.id);
-  //   this.products[productIndex] = product
+  // editProduct(productId:string,editedProduct:IProduct):Observable<IProduct> {
+  //   // this.bodyParam.id=editedProduct.id;
+  //   // this.bodyParam.name=editedProduct.name;
+  //   // this.bodyParam.photo=editedProduct.photo;
+  //   // this.bodyParam.price=editedProduct.price;
+  //   // this.bodyParam.quantityInStock=editedProduct.quantityInStock;
+  //   this.bodyParam=editedProduct;
+  //   this.body=this.bodyParam.toString();
+  //   const params=new HttpParams().set('edited',this.body);
+  //   //this.httpClient.put<IProduct>(`https://coolproductsapp.azurewebsites.net/api/Products/${productId}`+params)
 
 
-  // }
+   //return this.httpClient.put(`https://coolproductsapp.azurewebsites.net/api/Products/${productId},${editedProduct}`)
+  }
   // deleteProduct(product: IProduct) {
   //   let productIndex = this.products.findIndex(prod => prod.id == product.id);
   //   this.products.splice(productIndex, 1);
 
   // }
-}
+//}

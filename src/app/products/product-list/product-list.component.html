@@ -8,7 +8,7 @@
 
         <mat-card-title>{{pro.name}}</mat-card-title>
         <mat-card-title>
-        <img [src]="pro.photo" (click)="showDetails(pro.id)">
+        <img [src]="pro.photo" (click)="toDetailsPage(pro.id)">
       </mat-card-title>
         <mat-card-subtitle>
           <p>{{pro.price}}</p>
@@ -20,6 +20,10 @@
         </mat-card-subtitle>
         <mat-card-subtitle>
           <p>{{pro.quantityInStock}}</p>
+
+        </mat-card-subtitle>
+        <mat-card-subtitle>
+          <button mat-raised-button color="warn" (click)="toEditPage(pro.id)">Edit</button>
 
         </mat-card-subtitle>
       </mat-card-header>

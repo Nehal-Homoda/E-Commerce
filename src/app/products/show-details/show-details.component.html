@@ -1,1 +1,27 @@
-<p>show-details works!</p>
+<mat-spinner *ngIf="isLoad"></mat-spinner>
+<mat-card >
+
+    <!-- <img mat-card-image [src]="" (click)="showDetails()" alt="Photo of a Shiba Inu"> -->
+    <mat-card-header>
+
+      <mat-card-title>{{selectedProduct.name}}</mat-card-title>
+      <mat-card-title>
+      <img [src]="selectedProduct.photo" >
+    </mat-card-title>
+      <mat-card-subtitle>
+        <p>{{selectedProduct.price}}</p>
+
+      </mat-card-subtitle>
+      <mat-card-subtitle>
+        <p>{{selectedProduct.category}}</p>
+
+      </mat-card-subtitle>
+      <mat-card-subtitle>
+        <p>{{selectedProduct.quantityInStock}}</p>
+
+      </mat-card-subtitle>
+    </mat-card-header>
+
+  </mat-card>
+
+
