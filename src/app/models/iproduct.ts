@@ -1,9 +1,11 @@
 export interface IProduct {
-    id:number;
+    id:string;
     name:string;
+    photo?:string; 
+    category:string;
     price:number;
-    quantity:number;
-    imgUrl?:string;      //save navigation operator
-    categoryId:number;
+    quantityInStock:number;
+        //save navigation operator
+    
 
 }
