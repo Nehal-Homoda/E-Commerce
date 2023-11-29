@@ -1,1 +1,45 @@
-<p>add-product works!</p>
+<form [formGroup]="addProductForm">
+  <mat-form-field>
+    <mat-label>id</mat-label>
+    
+    <input matInput formControlName="id">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>name</mat-label>
+    <input matInput formControlName="name">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>photo</mat-label>
+    <input matInput formControlName="photo">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>category</mat-label>
+    <input matInput formControlName="category">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>price</mat-label>
+    <input matInput formControlName="price">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>quantity</mat-label>
+    <input matInput formControlName="quantityInStock">
+  </mat-form-field>
+
+  <mat-form-field>
+    <button mat-raised-button color="warn">Save</button>
+  </mat-form-field>
+
+  <mat-form-field>
+    <div>{{addProductForm.value|json}}</div>
+  </mat-form-field>
+
+
+
+</form>

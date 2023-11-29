@@ -29,6 +29,9 @@ export class ProductServiceService {
     return this.httpClient.get<IProduct>(`https://coolproductsapp.azurewebsites.net/api/Products/${proId}`);
   }
 
+    // addProduct(product:IProduct){
+    //    this.httpClient.post()
+    // }
 
   // getProductByCategoryId(catName: string): IProduct[] {
   //   return this.products.filter(products => products.category == catName)

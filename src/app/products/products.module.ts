@@ -10,7 +10,10 @@ import {MatCardModule} from '@angular/material/card';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ShowDetailsComponent } from './show-details/show-details.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,11 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     ProductsRoutingModule,
     MatCardModule,
     MatButtonModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ],
 
 })

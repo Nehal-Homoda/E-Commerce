@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+//import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -30,6 +32,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     CoreModule,
     HttpClientModule,
     BrowserAnimationsModule,
+   // ReactiveFormsModule
    
   ],
   providers: [],
