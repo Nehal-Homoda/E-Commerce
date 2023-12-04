@@ -1,0 +1,15 @@
+mat-form-field {
+    display: block;
+    width: 100%;
+  }
+  
+  form {
+    padding: 3em;
+    display: block;
+    margin: auto;
+    width: 50%;
+  }
+  button {
+    display: block;
+    margin: auto;
+  }

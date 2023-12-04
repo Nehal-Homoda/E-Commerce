@@ -31,5 +31,8 @@ export class ProductListComponent implements OnInit {
   toEditPage(proId:string){
     
   }
+  toAddPage(){
+    this.router.navigateByUrl(`/product/add/addProduct`)
+  }
 
 }

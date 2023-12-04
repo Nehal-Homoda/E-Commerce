@@ -1,11 +1,17 @@
-.cards{
-display: inline-block;
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-  .example-card{
-    width:45%;
-    margin: 20px;
-    display:inline-block;
-  }
-.quantity{
+.example-card {
+  width: 30%;
+  margin: 20px;
+  display: inline-block;
+}
+.quantity {
   margin-left: 100px;
+}
+img {
+  width: 100%;
+  max-height: 300px;
 }

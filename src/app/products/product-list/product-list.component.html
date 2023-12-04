@@ -1,33 +1,17 @@
-
-  <mat-spinner *ngIf="isLoad"></mat-spinner>
-  <ng-container  class="cards">
-    <mat-card *ngFor="let pro of products" class="example-card">
-
-      <!-- <img mat-card-image [src]="" (click)="showDetails()" alt="Photo of a Shiba Inu"> -->
-      <mat-card-header>
-
-        <mat-card-title>{{pro.name}}</mat-card-title>
-        <mat-card-title>
-        <img [src]="pro.photo" (click)="toDetailsPage(pro.id)">
-      </mat-card-title>
-        <mat-card-subtitle>
-          <p>{{pro.price}}</p>
-
-        </mat-card-subtitle>
-        <mat-card-subtitle>
-          <p>{{pro.category}}</p>
-
-        </mat-card-subtitle>
-        <mat-card-subtitle>
-          <p>{{pro.quantityInStock}}</p>
-
-        </mat-card-subtitle>
-        <mat-card-subtitle>
-          <button mat-raised-button color="warn" (click)="toEditPage(pro.id)">Edit</button>
-
-        </mat-card-subtitle>
-      </mat-card-header>
-
-    </mat-card>
-
-  </ng-container>
+<mat-spinner *ngIf="isLoad"></mat-spinner>
+<div *ngIf="!isLoad" class="cards">
+  <button mat-raised-button color="warn" (click)="toAddPage()">
+    Add product
+  </button>
+  <mat-card *ngFor="let pro of products" class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{ pro.name }}</mat-card-title>
+      <mat-card-title>{{ pro.category }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="pro.photo" alt="Photo of a product" />
+    <mat-card-content>
+      <p>Price: {{ pro.price }}</p>
+      <p>Quantity: {{ pro.quantityInStock }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
