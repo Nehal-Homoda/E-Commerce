@@ -67,10 +67,12 @@ export class EditproductComponent implements OnInit {
       price: this.editForm.get('price')?.value,
       quantityInStock: this.editForm.get('quantityInStock')?.value,
     };
+    this.isLoading=true;
     this.prod
       .editProduct(this.idFromRoute, editedProd)
       .subscribe((editedPro) => {
         console.log('edited');
+        this.isLoading=false;
         this.router.navigateByUrl(`/product/product`);
       });
   }

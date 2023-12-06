@@ -7,34 +7,47 @@ import { ProductServiceService } from 'src/app/services/product-service.service'
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
   products: IProduct[] = [];
   isLoad: boolean = true;
   //productId: string = "";
-  constructor(private productService: ProductServiceService, private router: Router) {
-
-  }
+  constructor(
+    private productService: ProductServiceService,
+    private router: Router
+  ) {}
   ngOnInit(): void {
-    this.productService.getAllProducts().subscribe(prod => {
+    this.getAllProducts();
+  }
+
+  getAllProducts() {
+    this.isLoad = true;
+    this.productService.getAllProducts().subscribe((prod) => {
       this.products = prod;
       this.isLoad = false;
     });
   }
+
   toDetailsPage(proId: string) {
     // this.productService.getProductById(proId).subscribe(prodId=>{
     //   this.productId=prodId.id;
     // })
-    this.router.navigateByUrl(`/product/details/${proId}`)
+    this.router.navigateByUrl(`/product/details/${proId}`);
   }
-  toEditPage(proId:string){
-    this.router.navigateByUrl(`/product/edit/${proId}`)
-  
+  toEditPage(proId: string) {
+    this.router.navigateByUrl(`/product/edit/${proId}`);
   }
-  toAddPage(){
-    this.router.navigateByUrl(`/product/add/addProduct`)
+  toAddPage() {
+    this.router.navigateByUrl(`/product/add/addProduct`);
   }
-
-
+  toDeletePage(id: string) {
+    this.isLoad = true;
+    //this.router.navigateByUrl(`/product/delete/${id}`)
+    this.productService.delete(id).subscribe(() => {
+      console.log('deleted');
+      this.isLoad = false;
+      this.getAllProducts();
+    });
+  }
 }

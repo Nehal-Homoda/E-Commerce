@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ProductsRoutingModule } from './products-routing.module';
 import { EditproductComponent } from './editproduct/editproduct.component';
-import { DeleteproductComponent } from './deleteproduct/deleteproduct.component';
+import { deleteproductDialog } from './deleteproductDialog/deleteproductDialog.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
@@ -18,7 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     EditproductComponent,
-    DeleteproductComponent,
+    deleteproductDialog,
     AddProductComponent,
     ProductListComponent,
     ShowDetailsComponent
@@ -32,7 +32,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+   
   ],
 
 })

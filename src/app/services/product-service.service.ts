@@ -43,6 +43,9 @@ export class ProductServiceService {
       editedProduct
     );
   }
+  delete(id:string) :Observable<void> {
+    return this.httpClient.delete<void>(`https://coolproductsapp.azurewebsites.net/api/Products/${id}`)
+  }
 
   // getProductByCategoryId(catName: string): IProduct[] {
   //   return this.products.filter(products => products.category == catName)
