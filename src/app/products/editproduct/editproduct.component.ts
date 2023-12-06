@@ -12,13 +12,13 @@ import { __values } from 'tslib';
 })
 export class EditproductComponent implements OnInit {
   editForm: FormGroup;
-  //isLoad:boolean=true;
+  isLoading:boolean=true;
   idFromRoute: string = '';
   //currentPro:IProduct;
   constructor(
     private activatedRoute: ActivatedRoute,
     private prod: ProductServiceService,
-    router: Router
+    private router: Router
   ) {
     this.editForm = new FormGroup({
       name: new FormControl(''),
@@ -39,10 +39,12 @@ export class EditproductComponent implements OnInit {
 
   public ngOnInit(): void {
     // get the id from the url
+   
     this.activatedRoute.paramMap.subscribe((map) => {
       this.idFromRoute = map.get('id')!;
       this.prod.getProductById(this.idFromRoute).subscribe((productById) => {
         this.editForm.patchValue(productById);
+        this.isLoading=false;
         //   {
         //   name: productById.name,
         //   photo: productById.photo,
@@ -69,6 +71,7 @@ export class EditproductComponent implements OnInit {
       .editProduct(this.idFromRoute, editedProd)
       .subscribe((editedPro) => {
         console.log('edited');
+        this.router.navigateByUrl(`/product/product`);
       });
   }
 }

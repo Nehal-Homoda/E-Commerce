@@ -7,9 +7,9 @@
     b- Fill the form with old values
 4- Other than that just like the add except you need to submit the id with the object -->
 
-
-  <form [formGroup]="editForm">
-    <!-- <mat-spinner *ngIf="isLoad"></mat-spinner>  -->
+<mat-spinner *ngIf="isLoading"></mat-spinner> 
+  <form *ngIf="!isLoading"   [formGroup]="editForm">
+   
 
     <mat-form-field>
       <mat-label>name</mat-label>
