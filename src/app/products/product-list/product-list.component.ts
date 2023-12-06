@@ -12,7 +12,7 @@ import { ProductServiceService } from 'src/app/services/product-service.service'
 export class ProductListComponent implements OnInit {
   products: IProduct[] = [];
   isLoad: boolean = true;
-  productId: string = "";
+  //productId: string = "";
   constructor(private productService: ProductServiceService, private router: Router) {
 
   }
@@ -29,10 +29,12 @@ export class ProductListComponent implements OnInit {
     this.router.navigateByUrl(`/product/details/${proId}`)
   }
   toEditPage(proId:string){
-    
+    this.router.navigateByUrl(`/product/edit/${proId}`)
+  
   }
   toAddPage(){
     this.router.navigateByUrl(`/product/add/addProduct`)
   }
+
 
 }

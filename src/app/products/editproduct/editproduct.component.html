@@ -1,1 +1,42 @@
-<p>editproduct works!</p>
+
+
+<!-- 1- Form just like the add from exactly.
+2- Get the id from the url. (either by snapshot or by observable)
+3- onInit must:
+    a- Get Product By Id
+    b- Fill the form with old values
+4- Other than that just like the add except you need to submit the id with the object -->
+
+
+  <form [formGroup]="editForm">
+    <!-- <mat-spinner *ngIf="isLoad"></mat-spinner>  -->
+
+    <mat-form-field>
+      <mat-label>name</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>photo</mat-label>
+      <input matInput formControlName="photo" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>category</mat-label>
+      <input matInput formControlName="category" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>price</mat-label>
+      <input matInput formControlName="price" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>quantity</mat-label>
+      <input matInput formControlName="quantityInStock" />
+    </mat-form-field>
+    <button mat-raised-button color="warn" (click)="save()"> 
+      Save Changes
+     </button>
+  </form>
+

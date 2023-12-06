@@ -8,10 +8,18 @@
       <mat-card-title>{{ pro.name }}</mat-card-title>
       <mat-card-title>{{ pro.category }}</mat-card-title>
     </mat-card-header>
-    <img mat-card-image [src]="pro.photo" alt="Photo of a product" />
+    <img
+      mat-card-image
+      [src]="pro.photo"
+      alt="Photo of a product"
+      (click)="toDetailsPage(pro.id)"
+    />
     <mat-card-content>
       <p>Price: {{ pro.price }}</p>
       <p>Quantity: {{ pro.quantityInStock }}</p>
+      <button mat-raised-button color="warn" (click)="toEditPage(pro.id)">
+        Edit
+      </button>
     </mat-card-content>
   </mat-card>
 </div>

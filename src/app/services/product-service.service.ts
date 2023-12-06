@@ -37,10 +37,12 @@ export class ProductServiceService {
       prod
     );
   }
-
-  // addProduct(product:IProduct){
-  //    this.httpClient.post()
-  // }
+  editProduct(id: string, editedProduct: IProduct): Observable<IProduct> {
+    return this.httpClient.put<IProduct>(
+      `https://coolproductsapp.azurewebsites.net/api/Products/${id}`,
+      editedProduct
+    );
+  }
 
   // getProductByCategoryId(catName: string): IProduct[] {
   //   return this.products.filter(products => products.category == catName)
